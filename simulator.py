@@ -3,8 +3,8 @@ import random
 import requests
 from datetime import datetime
 
-# URL of your local FastAPI backend
-API_URL = "http://127.0.0.1:8000/api/predict"
+
+API_URL = "https://water-potability-api-z2uw.onrender.com/api/predict"
 
 
 def generate_sensor_data():
@@ -42,7 +42,7 @@ def run_simulation():
                 print(f"   └─ API Error: {response.status_code} - {response.text}")
 
         except requests.exceptions.ConnectionError:
-            print("   └─ Error: Could not connect to API. Is uvicorn main:app running?")
+            print("   └─ Error: Could not connect to API. Is the Render server awake?")
 
         print("-" * 50)
         time.sleep(5)
