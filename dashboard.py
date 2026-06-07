@@ -87,8 +87,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # The code will now pull the keys securely from Render and Streamlit Cloud
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 
 @st.cache_resource
