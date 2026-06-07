@@ -86,15 +86,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# The code will now pull the keys securely from Render and Streamlit Cloud
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
+# --- TEMPORARY DEBUGGING BLOCK ---
+st.warning(f"DEBUG: The URL being read is -> '{SUPABASE_URL}'")
+# ---------------------------------
 
 @st.cache_resource
 def init_connection():
     return create_client(SUPABASE_URL, SUPABASE_KEY)
-
 
 supabase = init_connection()
 
